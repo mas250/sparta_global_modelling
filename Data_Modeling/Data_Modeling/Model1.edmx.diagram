@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7d0a5d5dcf846678b499af18dcd09be" Name="Diagram1" ZoomLevel="52" >
+        <EntityTypeShape EntityType="Model1.Student" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.Address" Width="1.5" PointX="9.5" PointY="1" />
+        <AssociationConnector Association="Model1.StudentAddress" />
+        <EntityTypeShape EntityType="Model1.Course" Width="1.5" PointX="7.5" PointY="3.875" />
+        <AssociationConnector Association="Model1.StudentCourse" />
+        <EntityTypeShape EntityType="Model1.Teacher" Width="1.5" PointX="1.375" PointY="3.875" />
+        <AssociationConnector Association="Model1.TeacherCourse" />
+        <AssociationConnector Association="Model1.TeacherAddress" />
+        <EntityTypeShape EntityType="Model1.ClassGroup" Width="1.5" PointX="3.125" PointY="0.5" />
+        <AssociationConnector Association="Model1.TeacherClassGroup" />
+        <AssociationConnector Association="Model1.ClassGroupStudent" />
+        <EntityTypeShape EntityType="Model1.Book" Width="1.5" PointX="9.75" PointY="5.5" />
+        <AssociationConnector Association="Model1.BookCourse" />
+        <EntityTypeShape EntityType="Model1.Classroom" Width="1.5" PointX="4.75" PointY="5.375" />
+        <AssociationConnector Association="Model1.ClassroomTeacher" />
+        <AssociationConnector Association="Model1.ClassroomClassGroup" />
+        <AssociationConnector Association="Model1.ClassroomStudent" />
+        <EntityTypeShape EntityType="Model1.Parent" Width="1.5" PointX="6.75" PointY="7.125" />
+        <AssociationConnector Association="Model1.ParentStudent" />
+        <AssociationConnector Association="Model1.ParentAddress" />
+        <EntityTypeShape EntityType="Model1.Staff" Width="1.5" PointX="12.125" PointY="5.125" />
+        <AssociationConnector Association="Model1.StaffAddress" />
+        <EntityTypeShape EntityType="Model1.Alumni" Width="1.5" PointX="12" PointY="1.125" />
+        <AssociationConnector Association="Model1.AlumniAddress" />
+        <AssociationConnector Association="Model1.AlumniStudent" />
+        <EntityTypeShape EntityType="Model1.YearGroup" Width="1.5" PointX="0.625" PointY="0.875" />
+        <AssociationConnector Association="Model1.YearGroupClassGroup" />
+        <AssociationConnector Association="Model1.TeacherYearGroup" />
+        <EntityTypeShape EntityType="Model1.Exam" Width="1.5" PointX="14.875" PointY="2.125" />
+        <AssociationConnector Association="Model1.ExamCourse" />
+        <EntityTypeShape EntityType="Model1.Phone" Width="1.5" PointX="14.875" PointY="5.125" />
+        <AssociationConnector Association="Model1.PhoneStaff" />
+        <AssociationConnector Association="Model1.PhoneTeacher" />
+        <AssociationConnector Association="Model1.PhoneParent" />
+        <EntityTypeShape EntityType="Model1.Computer" Width="1.5" PointX="2.25" PointY="8.125" />
+        <AssociationConnector Association="Model1.ComputerClassroom" />
+        <EntityTypeShape EntityType="Model1.LaptopRenter" Width="1.5" PointX="10.375" PointY="9.125" />
+        <AssociationConnector Association="Model1.LaptopRenterStudent" />
+        <AssociationConnector Association="Model1.LaptopRenterTeacher" />
+        <AssociationConnector Association="Model1.LaptopRenterStaff" />
+        <EntityTypeShape EntityType="Model1.Laptop" Width="1.5" PointX="15.625" PointY="9.5" />
+        <AssociationConnector Association="Model1.LaptopLaptopRenter" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

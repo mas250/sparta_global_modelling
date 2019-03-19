@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Students" EntityType="Model1.Student" />
+          <EntitySet Name="Addresses" EntityType="Model1.Address" />
+          <AssociationSet Name="StudentAddress" Association="Model1.StudentAddress">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Courses" EntityType="Model1.Course" />
+          <AssociationSet Name="StudentCourse" Association="Model1.StudentCourse">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <EntitySet Name="Teachers" EntityType="Model1.Teacher" />
+          <AssociationSet Name="TeacherCourse" Association="Model1.TeacherCourse">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="TeacherAddress" Association="Model1.TeacherAddress">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="ClassGroups" EntityType="Model1.ClassGroup" />
+          <AssociationSet Name="TeacherClassGroup" Association="Model1.TeacherClassGroup">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="ClassGroup" EntitySet="ClassGroups" />
+          </AssociationSet>
+          <AssociationSet Name="ClassGroupStudent" Association="Model1.ClassGroupStudent">
+            <End Role="ClassGroup" EntitySet="ClassGroups" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <EntitySet Name="Books" EntityType="Model1.Book" />
+          <AssociationSet Name="BookCourse" Association="Model1.BookCourse">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <EntitySet Name="Classrooms" EntityType="Model1.Classroom" />
+          <AssociationSet Name="ClassroomTeacher" Association="Model1.ClassroomTeacher">
+            <End Role="Classroom" EntitySet="Classrooms" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="ClassroomClassGroup" Association="Model1.ClassroomClassGroup">
+            <End Role="Classroom" EntitySet="Classrooms" />
+            <End Role="ClassGroup" EntitySet="ClassGroups" />
+          </AssociationSet>
+          <AssociationSet Name="ClassroomStudent" Association="Model1.ClassroomStudent">
+            <End Role="Classroom" EntitySet="Classrooms" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <EntitySet Name="Parents" EntityType="Model1.Parent" />
+          <AssociationSet Name="ParentStudent" Association="Model1.ParentStudent">
+            <End Role="Parent" EntitySet="Parents" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="ParentAddress" Association="Model1.ParentAddress">
+            <End Role="Parent" EntitySet="Parents" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Staffs" EntityType="Model1.Staff" />
+          <AssociationSet Name="StaffAddress" Association="Model1.StaffAddress">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Alumni" EntityType="Model1.Alumni" />
+          <AssociationSet Name="AlumniAddress" Association="Model1.AlumniAddress">
+            <End Role="Alumni" EntitySet="Alumni" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="AlumniStudent" Association="Model1.AlumniStudent">
+            <End Role="Alumni" EntitySet="Alumni" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <EntitySet Name="YearGroups" EntityType="Model1.YearGroup" />
+          <AssociationSet Name="YearGroupClassGroup" Association="Model1.YearGroupClassGroup">
+            <End Role="YearGroup" EntitySet="YearGroups" />
+            <End Role="ClassGroup" EntitySet="ClassGroups" />
+          </AssociationSet>
+          <AssociationSet Name="TeacherYearGroup" Association="Model1.TeacherYearGroup">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="YearGroup" EntitySet="YearGroups" />
+          </AssociationSet>
+          <EntitySet Name="Exams" EntityType="Model1.Exam" />
+          <AssociationSet Name="ExamCourse" Association="Model1.ExamCourse">
+            <End Role="Exam" EntitySet="Exams" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <EntitySet Name="Phones" EntityType="Model1.Phone" />
+          <AssociationSet Name="PhoneStaff" Association="Model1.PhoneStaff">
+            <End Role="Phone" EntitySet="Phones" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneTeacher" Association="Model1.PhoneTeacher">
+            <End Role="Phone" EntitySet="Phones" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneParent" Association="Model1.PhoneParent">
+            <End Role="Phone" EntitySet="Phones" />
+            <End Role="Parent" EntitySet="Parents" />
+          </AssociationSet>
+          <EntitySet Name="Computers" EntityType="Model1.Computer" />
+          <AssociationSet Name="ComputerClassroom" Association="Model1.ComputerClassroom">
+            <End Role="Computer" EntitySet="Computers" />
+            <End Role="Classroom" EntitySet="Classrooms" />
+          </AssociationSet>
+          <EntitySet Name="LaptopRenters" EntityType="Model1.LaptopRenter" />
+          <AssociationSet Name="LaptopRenterStudent" Association="Model1.LaptopRenterStudent">
+            <End Role="LaptopRenter" EntitySet="LaptopRenters" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="LaptopRenterTeacher" Association="Model1.LaptopRenterTeacher">
+            <End Role="LaptopRenter" EntitySet="LaptopRenters" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="LaptopRenterStaff" Association="Model1.LaptopRenterStaff">
+            <End Role="LaptopRenter" EntitySet="LaptopRenters" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <EntitySet Name="Laptops" EntityType="Model1.Laptop" />
+          <AssociationSet Name="LaptopLaptopRenter" Association="Model1.LaptopLaptopRenter">
+            <End Role="Laptop" EntitySet="Laptops" />
+            <End Role="LaptopRenter" EntitySet="LaptopRenters" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="age" Type="String" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" />
+          <NavigationProperty Name="Addresses" Relationship="Model1.StudentAddress" FromRole="Student" ToRole="Address" />
+          <NavigationProperty Name="Courses" Relationship="Model1.StudentCourse" FromRole="Student" ToRole="Course" />
+          <NavigationProperty Name="ClassGroup" Relationship="Model1.ClassGroupStudent" FromRole="Student" ToRole="ClassGroup" />
+          <Property Name="ClassGroupId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classroom" Relationship="Model1.ClassroomStudent" FromRole="Student" ToRole="Classroom" />
+          <Property Name="ClassroomId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Parent" Relationship="Model1.ParentStudent" FromRole="Student" ToRole="Parent" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumnus" Relationship="Model1.AlumniStudent" FromRole="Student" ToRole="Alumni" />
+          <Property Name="AlumniId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LaptopRenter" Relationship="Model1.LaptopRenterStudent" FromRole="Student" ToRole="LaptopRenter" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="city" Type="String" Nullable="false" />
+          <Property Name="streetName" Type="String" Nullable="false" />
+          <Property Name="postcode" Type="String" Nullable="false" />
+          <Property Name="houseNumber" Type="String" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Model1.StudentAddress" FromRole="Address" ToRole="Student" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.TeacherAddress" FromRole="Address" ToRole="Teacher" />
+          <NavigationProperty Name="Parent" Relationship="Model1.ParentAddress" FromRole="Address" ToRole="Parent" />
+          <NavigationProperty Name="Staff" Relationship="Model1.StaffAddress" FromRole="Address" ToRole="Staff" />
+          <NavigationProperty Name="Alumnus" Relationship="Model1.AlumniAddress" FromRole="Address" ToRole="Alumni" />
+        </EntityType>
+        <Association Name="StudentAddress">
+          <End Type="Model1.Student" Role="Student" Multiplicity="1" />
+          <End Type="Model1.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Student" Relationship="Model1.StudentCourse" FromRole="Course" ToRole="Student" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.TeacherCourse" FromRole="Course" ToRole="Teacher" />
+          <NavigationProperty Name="Books" Relationship="Model1.BookCourse" FromRole="Course" ToRole="Book" />
+          <NavigationProperty Name="Exam" Relationship="Model1.ExamCourse" FromRole="Course" ToRole="Exam" />
+        </EntityType>
+        <Association Name="StudentCourse">
+          <End Type="Model1.Student" Role="Student" Multiplicity="1" />
+          <End Type="Model1.Course" Role="Course" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" />
+          <Property Name="courses" Type="String" Nullable="false" />
+          <Property Name="classGroup" Type="String" Nullable="false" />
+          <NavigationProperty Name="Courses" Relationship="Model1.TeacherCourse" FromRole="Teacher" ToRole="Course" />
+          <NavigationProperty Name="Addresses" Relationship="Model1.TeacherAddress" FromRole="Teacher" ToRole="Address" />
+          <NavigationProperty Name="ClassGroup" Relationship="Model1.TeacherClassGroup" FromRole="Teacher" ToRole="ClassGroup" />
+          <NavigationProperty Name="Classroom" Relationship="Model1.ClassroomTeacher" FromRole="Teacher" ToRole="Classroom" />
+          <NavigationProperty Name="YearGroup" Relationship="Model1.TeacherYearGroup" FromRole="Teacher" ToRole="YearGroup" />
+          <NavigationProperty Name="Phone" Relationship="Model1.PhoneTeacher" FromRole="Teacher" ToRole="Phone" />
+          <Property Name="LaptopRenterId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LaptopRenter" Relationship="Model1.LaptopRenterTeacher" FromRole="Teacher" ToRole="LaptopRenter" />
+        </EntityType>
+        <Association Name="TeacherCourse">
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="Model1.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <Association Name="TeacherAddress">
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="Model1.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="ClassGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="className" Type="String" Nullable="false" />
+          <Property Name="studentsInClass" Type="String" Nullable="false" />
+          <Property Name="formTutor" Type="String" Nullable="false" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.TeacherClassGroup" FromRole="ClassGroup" ToRole="Teacher" />
+          <NavigationProperty Name="Students" Relationship="Model1.ClassGroupStudent" FromRole="ClassGroup" ToRole="Student" />
+          <NavigationProperty Name="Classroom" Relationship="Model1.ClassroomClassGroup" FromRole="ClassGroup" ToRole="Classroom" />
+          <NavigationProperty Name="YearGroup" Relationship="Model1.YearGroupClassGroup" FromRole="ClassGroup" ToRole="YearGroup" />
+          <Property Name="YearGroupId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TeacherClassGroup">
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="Model1.ClassGroup" Role="ClassGroup" Multiplicity="1" />
+        </Association>
+        <Association Name="ClassGroupStudent">
+          <End Type="Model1.ClassGroup" Role="ClassGroup" Multiplicity="1" />
+          <End Type="Model1.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ClassGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" />
+          <Property Name="ISBN" Type="String" Nullable="false" />
+          <Property Name="subject" Type="String" Nullable="false" />
+          <Property Name="cost" Type="String" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Model1.BookCourse" FromRole="Book" ToRole="Course" />
+        </EntityType>
+        <Association Name="BookCourse">
+          <End Type="Model1.Book" Role="Book" Multiplicity="*" />
+          <End Type="Model1.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Classroom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="classroomName" Type="String" Nullable="false" />
+          <Property Name="mainTeacher" Type="String" Nullable="false" />
+          <Property Name="classroomCapacity" Type="String" Nullable="false" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.ClassroomTeacher" FromRole="Classroom" ToRole="Teacher" />
+          <NavigationProperty Name="ClassGroup" Relationship="Model1.ClassroomClassGroup" FromRole="Classroom" ToRole="ClassGroup" />
+          <NavigationProperty Name="Students" Relationship="Model1.ClassroomStudent" FromRole="Classroom" ToRole="Student" />
+          <NavigationProperty Name="Computers" Relationship="Model1.ComputerClassroom" FromRole="Classroom" ToRole="Computer" />
+        </EntityType>
+        <Association Name="ClassroomTeacher">
+          <End Type="Model1.Classroom" Role="Classroom" Multiplicity="1" />
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ClassroomClassGroup">
+          <End Type="Model1.Classroom" Role="Classroom" Multiplicity="1" />
+          <End Type="Model1.ClassGroup" Role="ClassGroup" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ClassroomStudent">
+          <End Type="Model1.Classroom" Role="Classroom" Multiplicity="1" />
+          <End Type="Model1.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classroom">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ClassroomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Parent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="parentOf" Type="String" Nullable="false" />
+          <Property Name="parentAddress" Type="String" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Model1.ParentStudent" FromRole="Parent" ToRole="Student" />
+          <NavigationProperty Name="Address" Relationship="Model1.ParentAddress" FromRole="Parent" ToRole="Address" />
+          <NavigationProperty Name="Phone" Relationship="Model1.PhoneParent" FromRole="Parent" ToRole="Phone" />
+        </EntityType>
+        <Association Name="ParentStudent">
+          <End Type="Model1.Parent" Role="Parent" Multiplicity="1" />
+          <End Type="Model1.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parent">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ParentAddress">
+          <End Type="Model1.Parent" Role="Parent" Multiplicity="1" />
+          <End Type="Model1.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Model1.StaffAddress" FromRole="Staff" ToRole="Address" />
+          <NavigationProperty Name="Phone" Relationship="Model1.PhoneStaff" FromRole="Staff" ToRole="Phone" />
+          <NavigationProperty Name="LaptopRenter" Relationship="Model1.LaptopRenterStaff" FromRole="Staff" ToRole="LaptopRenter" />
+        </EntityType>
+        <Association Name="StaffAddress">
+          <End Type="Model1.Staff" Role="Staff" Multiplicity="1" />
+          <End Type="Model1.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Alumni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="age" Type="String" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Model1.AlumniAddress" FromRole="Alumni" ToRole="Address" />
+          <NavigationProperty Name="Students" Relationship="Model1.AlumniStudent" FromRole="Alumni" ToRole="Student" />
+        </EntityType>
+        <Association Name="AlumniAddress">
+          <End Type="Model1.Alumni" Role="Alumni" Multiplicity="1" />
+          <End Type="Model1.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <Association Name="AlumniStudent">
+          <End Type="Model1.Alumni" Role="Alumni" Multiplicity="1" />
+          <End Type="Model1.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alumni">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="AlumniId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="YearGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yearName" Type="String" Nullable="false" />
+          <Property Name="yearGroup" Type="String" Nullable="false" />
+          <Property Name="headOfYear" Type="String" Nullable="false" />
+          <NavigationProperty Name="ClassGroups" Relationship="Model1.YearGroupClassGroup" FromRole="YearGroup" ToRole="ClassGroup" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.TeacherYearGroup" FromRole="YearGroup" ToRole="Teacher" />
+        </EntityType>
+        <Association Name="YearGroupClassGroup">
+          <End Type="Model1.YearGroup" Role="YearGroup" Multiplicity="1" />
+          <End Type="Model1.ClassGroup" Role="ClassGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YearGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClassGroup">
+              <PropertyRef Name="YearGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TeacherYearGroup">
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="1" />
+          <End Type="Model1.YearGroup" Role="YearGroup" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Exam">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="examName" Type="String" Nullable="false" />
+          <Property Name="passGrade" Type="String" Nullable="false" />
+          <Property Name="courseExam" Type="String" Nullable="false" />
+          <Property Name="version" Type="String" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Model1.ExamCourse" FromRole="Exam" ToRole="Course" />
+        </EntityType>
+        <Association Name="ExamCourse">
+          <End Type="Model1.Exam" Role="Exam" Multiplicity="1" />
+          <End Type="Model1.Course" Role="Course" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mainContact" Type="String" Nullable="false" />
+          <Property Name="emergencyContact" Type="String" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Model1.PhoneStaff" FromRole="Phone" ToRole="Staff" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.PhoneTeacher" FromRole="Phone" ToRole="Teacher" />
+          <NavigationProperty Name="Parent" Relationship="Model1.PhoneParent" FromRole="Phone" ToRole="Parent" />
+        </EntityType>
+        <Association Name="PhoneStaff">
+          <End Type="Model1.Phone" Role="Phone" Multiplicity="1" />
+          <End Type="Model1.Staff" Role="Staff" Multiplicity="1" />
+        </Association>
+        <Association Name="PhoneTeacher">
+          <End Type="Model1.Phone" Role="Phone" Multiplicity="1" />
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="1" />
+        </Association>
+        <Association Name="PhoneParent">
+          <End Type="Model1.Phone" Role="Phone" Multiplicity="1" />
+          <End Type="Model1.Parent" Role="Parent" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Computer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="computerName" Type="String" Nullable="false" />
+          <Property Name="inClass" Type="String" Nullable="false" />
+          <Property Name="macAddress" Type="String" Nullable="false" />
+          <Property Name="purchaseDate" Type="String" Nullable="false" />
+          <Property Name="warantyDate" Type="String" Nullable="false" />
+          <Property Name="make" Type="String" Nullable="false" />
+          <NavigationProperty Name="Classroom" Relationship="Model1.ComputerClassroom" FromRole="Computer" ToRole="Classroom" />
+        </EntityType>
+        <Association Name="ComputerClassroom">
+          <End Type="Model1.Computer" Role="Computer" Multiplicity="*" />
+          <End Type="Model1.Classroom" Role="Classroom" Multiplicity="1" />
+        </Association>
+        <EntityType Name="LaptopRenter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" />
+          <Property Name="lastName" Type="String" Nullable="false" />
+          <Property Name="currentLaptop" Type="String" Nullable="false" />
+          <Property Name="hasLaptop" Type="String" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Model1.LaptopRenterStudent" FromRole="LaptopRenter" ToRole="Student" />
+          <NavigationProperty Name="Teacher" Relationship="Model1.LaptopRenterTeacher" FromRole="LaptopRenter" ToRole="Teacher" />
+          <NavigationProperty Name="Staff" Relationship="Model1.LaptopRenterStaff" FromRole="LaptopRenter" ToRole="Staff" />
+          <NavigationProperty Name="Laptop" Relationship="Model1.LaptopLaptopRenter" FromRole="LaptopRenter" ToRole="Laptop" />
+        </EntityType>
+        <Association Name="LaptopRenterStudent">
+          <End Type="Model1.LaptopRenter" Role="LaptopRenter" Multiplicity="1" />
+          <End Type="Model1.Student" Role="Student" Multiplicity="0..1" />
+        </Association>
+        <Association Name="LaptopRenterTeacher">
+          <End Type="Model1.LaptopRenter" Role="LaptopRenter" Multiplicity="1" />
+          <End Type="Model1.Teacher" Role="Teacher" Multiplicity="0..1" />
+        </Association>
+        <Association Name="LaptopRenterStaff">
+          <End Type="Model1.LaptopRenter" Role="LaptopRenter" Multiplicity="1" />
+          <End Type="Model1.Staff" Role="Staff" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Laptop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="computerName" Type="String" Nullable="false" />
+          <Property Name="inClass" Type="String" Nullable="false" />
+          <Property Name="macAddress" Type="String" Nullable="false" />
+          <Property Name="make" Type="String" Nullable="false" />
+          <Property Name="purchaseDate" Type="String" Nullable="false" />
+          <Property Name="warantyDate" Type="String" Nullable="false" />
+          <Property Name="renterName" Type="String" Nullable="false" />
+          <NavigationProperty Name="LaptopRenter" Relationship="Model1.LaptopLaptopRenter" FromRole="Laptop" ToRole="LaptopRenter" />
+        </EntityType>
+        <Association Name="LaptopLaptopRenter">
+          <End Type="Model1.Laptop" Role="Laptop" Multiplicity="1" />
+          <End Type="Model1.LaptopRenter" Role="LaptopRenter" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
